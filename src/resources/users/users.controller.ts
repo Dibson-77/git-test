@@ -1,24 +1,44 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards,Request } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards, Request, Render, Res } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { LoginUserdto } from './dto/Login-user.dto';
 import { AuthGuard } from './auth.guard';
+import { Response } from 'express';
 
 @Controller('users')
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
-  @Post('signup')
-  create(@Body() createUserDto: CreateUserDto) {
-    return this.usersService.signup(createUserDto);
+  @Get('signup')
+  @Render('auth/register')
+  getSignupPage() {
+    return { message: 'Page d\'inscription' };
   }
 
-  @Post('Login') 
-  Login(@Body() loginUserdto: LoginUserdto){ 
-    return this.usersService.Login(loginUserdto);
+  @Post('signup')
+  async create(@Body() createUserDto: CreateUserDto, @Res() res: Response) {
+    await this.usersService.signup(createUserDto);
+    return res.redirect('/users/login');
   }
-  
+
+  @Get('login')
+  @Render('auth/login')
+  getLoginPage() {
+    return { message: 'Page de connexion' };
+  }
+
+  @Post('login')
+  async login(@Body() loginUserdto: LoginUserdto, @Res() res: Response) {
+    const { accessToken } = await this.usersService.Login(loginUserdto);
+    // Stocker le token dans un cookie sécurisé
+    res.cookie('jwt', accessToken, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      maxAge: 24 * 60 * 60 * 1000 // 1 jour
+    });
+    return res.redirect('/users/profile');
+  }
 
   @Get()
   findAll() {
@@ -32,7 +52,7 @@ export class UsersController {
   
   @UseGuards(AuthGuard)
   @Get('profile')
-  async getProfile(@Request() req){
+  async getProfile(@Request() req) {
     return req.user;
   }
 

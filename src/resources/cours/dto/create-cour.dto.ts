@@ -7,3 +7,4 @@ export class CreateCourDto {
     @IsNumber()
     etudiantId: number;
 }
+ 

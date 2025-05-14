@@ -13,7 +13,7 @@ export class CoursService {
         etudiantId: data.etudiantId
         
        },
-    })
+    }) 
     return cours;
   }
 

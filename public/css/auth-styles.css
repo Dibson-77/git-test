@@ -1,0 +1,183 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.bg-gradient-primary {
+    background: url('/img/backgroundLogin.jpg');
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.login-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+   
+}
+
+.login-content {
+    text-align: center;
+}
+
+.title {
+    color: #1e293b;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.subtitle {
+    color: #64748b;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.form-control:focus {
+    border-color: #0ea5e9;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #64748b;
+}
+
+.forgot-password {
+    color: #0ea5e9;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-primary.btn-connect {
+    background-color: #0ea5e9;
+    color: white;
+}
+
+.btn-primary.btn-connect:hover {
+    background-color: #0284c7;
+}
+
+.btn-google {
+    background-color: #ea4335;
+    color: white;
+}
+
+.btn-google:hover {
+    background-color: #dc2626;
+}
+
+.btn-facebook {
+    background-color: #1877f2;
+    color: white;
+}
+
+.btn-facebook:hover {
+    background-color: #1d4ed8;
+}
+
+.signup-link {
+    margin-top: 20px;
+    color: #64748b;
+}
+
+.signup-link a {
+    color: #0ea5e9;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+.bg-login-image {
+    
+    background-position: center;
+    background-size: cover;
+}
+
+.form-control-user {
+    border-radius: 10rem;
+    padding: 1.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+.btn-user {
+    font-size: 0.9rem;
+    border-radius: 10rem;
+    padding: 0.75rem 1rem;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+.small {
+    font-size: 80%;
+    font-weight: 400;
+}
+
+.text-gray-900 {
+    color: #3a3b45 !important;
+}
+
+.o-hidden {
+    overflow: hidden !important;
+}
+
+.containerLogin {
+    padding: 3rem 1.5rem;
+} 

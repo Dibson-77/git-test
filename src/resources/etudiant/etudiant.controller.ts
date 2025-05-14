@@ -13,7 +13,7 @@ export class EtudiantController {
   }
   
   
-  @Get()
+  @Get() 
   findAll() {
     return this.etudiantService.findAll();
   }

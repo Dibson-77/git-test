@@ -9,7 +9,7 @@ import { MailModule } from './mail/mail.module';
 
 
 @Module({
-  imports: [EtudiantModule, CoursModule, UsersModule, MailModule],
+  imports: [ EtudiantModule, CoursModule, UsersModule, MailModule],
   controllers: [AppController],
   providers: [AppService, PrismaService],
 })
